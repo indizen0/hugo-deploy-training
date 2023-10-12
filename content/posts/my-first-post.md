@@ -5,3 +5,5 @@ draft = false
 +++
 
 testing hugo server
+
+this should auto deploy
