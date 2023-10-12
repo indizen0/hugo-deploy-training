@@ -6,7 +6,9 @@ environment_variables:
     
 phases:
   install:
-    commands:                                                                 
+    commands: 
+      - pwd
+      - ls -a
       - cd /tmp
       - wget https://github.com/gohugoio/hugo/releases/download/v0.80.0/hugo_extended_0.80.0_Linux-64bit.tar.gz
       - tar -xzf hugo_extended_0.80.0_Linux-64bit.tar.gz
@@ -16,7 +18,9 @@ phases:
   build:
     commands:
       - rm -rf public
+      - ls -a
       - hugo 
+      - ls -a
   post_build:
     commands:
       - aws s3 sync --delete public s3://hugo-deploy-bucket
